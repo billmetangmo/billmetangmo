@@ -1,0 +1,19 @@
+name: Metrics
+on:
+  # 🌏 Think about the planet! No need to update stats too frequently
+  schedule: [{cron: "0 16 * * *"}]
+  # 💡 The following line lets you run workflow manually from the action tab!
+  workflow_dispatch:
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Featured star list
+        uses: lowlighter/metrics@v3.27
+        with:
+          filename: metrics.plugin.starlists.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_starlists: yes
+          plugin_starlists_limit_repositories: 2
